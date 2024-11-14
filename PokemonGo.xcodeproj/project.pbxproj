@@ -14,6 +14,10 @@
 		873600FF2CE3F15D0030825A /* PokemonGo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 873600FD2CE3F15D0030825A /* PokemonGo.xcdatamodeld */; };
 		873601012CE3F15F0030825A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 873601002CE3F15F0030825A /* Assets.xcassets */; };
 		873601042CE3F15F0030825A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873601022CE3F15F0030825A /* LaunchScreen.storyboard */; };
+		8744F4882CE5467300D4D172 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8744F4872CE5467300D4D172 /* MapKit.framework */; };
+		8744F48A2CE55FAE00D4D172 /* PokedexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744F4892CE55FAE00D4D172 /* PokedexViewController.swift */; };
+		8744F48C2CE5610600D4D172 /* Funciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744F48B2CE5610600D4D172 /* Funciones.swift */; };
+		87D841B82CE67ACA00110F7D /* PokePin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D841B72CE67ACA00110F7D /* PokePin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		873601002CE3F15F0030825A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		873601032CE3F15F0030825A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873601052CE3F15F0030825A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8744F4872CE5467300D4D172 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8744F4892CE55FAE00D4D172 /* PokedexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexViewController.swift; sourceTree = "<group>"; };
+		8744F48B2CE5610600D4D172 /* Funciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Funciones.swift; sourceTree = "<group>"; };
+		87D841B72CE67ACA00110F7D /* PokePin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokePin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8744F4882CE5467300D4D172 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +53,7 @@
 			children = (
 				873600F32CE3F15D0030825A /* PokemonGo */,
 				873600F22CE3F15D0030825A /* Products */,
+				8744F4862CE5467300D4D172 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,7 +70,10 @@
 			children = (
 				873600F42CE3F15D0030825A /* AppDelegate.swift */,
 				873600F62CE3F15D0030825A /* SceneDelegate.swift */,
+				8744F4892CE55FAE00D4D172 /* PokedexViewController.swift */,
+				8744F48B2CE5610600D4D172 /* Funciones.swift */,
 				873600F82CE3F15D0030825A /* ViewController.swift */,
+				87D841B72CE67ACA00110F7D /* PokePin.swift */,
 				873600FA2CE3F15D0030825A /* Main.storyboard */,
 				873601002CE3F15F0030825A /* Assets.xcassets */,
 				873601022CE3F15F0030825A /* LaunchScreen.storyboard */,
@@ -68,6 +81,14 @@
 				873600FD2CE3F15D0030825A /* PokemonGo.xcdatamodeld */,
 			);
 			path = PokemonGo;
+			sourceTree = "<group>";
+		};
+		8744F4862CE5467300D4D172 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8744F4872CE5467300D4D172 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +163,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				873600F92CE3F15D0030825A /* ViewController.swift in Sources */,
+				87D841B82CE67ACA00110F7D /* PokePin.swift in Sources */,
 				873600FF2CE3F15D0030825A /* PokemonGo.xcdatamodeld in Sources */,
+				8744F48A2CE55FAE00D4D172 /* PokedexViewController.swift in Sources */,
 				873600F52CE3F15D0030825A /* AppDelegate.swift in Sources */,
+				8744F48C2CE5610600D4D172 /* Funciones.swift in Sources */,
 				873600F72CE3F15D0030825A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

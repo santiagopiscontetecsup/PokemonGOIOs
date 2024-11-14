@@ -1,24 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PokemonGo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wvr-fs-P1g">
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMj-xi-eS5">
+                                <rect key="frame" x="330" y="67" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Jp0-G0-Cqr"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="aac-Cq-NI7"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="bUX-BX-q2C"/>
+                                    <constraint firstAttribute="width" constant="50" id="i0c-iy-1em"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="compass"/>
+                                <connections>
+                                    <action selector="centrarTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XTJ-8x-X8E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omk-8v-X5c">
+                                <rect key="frame" x="170" y="740" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="7b1-IG-ePN"/>
+                                    <constraint firstAttribute="height" constant="50" id="s7R-c1-GCQ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="pokeball"/>
+                                <connections>
+                                    <segue destination="QhK-ZD-x3o" kind="presentation" identifier="pokedexSegue" id="MQa-lk-YuB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wMj-xi-eS5" secondAttribute="trailing" constant="10" id="5gd-Yk-hRk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="omk-8v-X5c" secondAttribute="bottom" constant="20" id="9JB-aB-CB8"/>
+                            <constraint firstItem="Wvr-fs-P1g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BIX-mv-nLd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wvr-fs-P1g" secondAttribute="trailing" id="Kcw-PN-tsH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Wvr-fs-P1g" secondAttribute="bottom" id="Q7X-0g-lwT"/>
+                            <constraint firstItem="omk-8v-X5c" firstAttribute="centerX" secondItem="Wvr-fs-P1g" secondAttribute="centerX" id="W3G-YQ-Ppw"/>
+                            <constraint firstItem="Wvr-fs-P1g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iCs-JT-h8H"/>
+                            <constraint firstItem="wMj-xi-eS5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="mvn-9P-Txq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="Wvr-fs-P1g" id="Arh-Ch-NLn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="47.692307692307693" y="-64.691943127962077"/>
+        </scene>
+        <!--Pokedex View Controller-->
+        <scene sceneID="rVc-BX-Y0T">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="QhK-ZD-x3o" customClass="PokedexViewController" customModule="PokemonGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WIa-cx-4na">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vWg-q0-gqJ">
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7x8-l2-788">
+                                <rect key="frame" x="170" y="740" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="83S-5M-yg0"/>
+                                    <constraint firstAttribute="width" constant="50" id="aUT-iv-yWC"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="map"/>
+                                <connections>
+                                    <action selector="mapTapped:" destination="QhK-ZD-x3o" eventType="touchUpInside" id="4be-qr-tIO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3bb-4i-KMH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3bb-4i-KMH" firstAttribute="bottom" secondItem="vWg-q0-gqJ" secondAttribute="bottom" id="2Qo-xw-iK2"/>
+                            <constraint firstItem="3bb-4i-KMH" firstAttribute="bottom" secondItem="7x8-l2-788" secondAttribute="bottom" constant="20" id="7hF-Yd-oNg"/>
+                            <constraint firstItem="vWg-q0-gqJ" firstAttribute="leading" secondItem="3bb-4i-KMH" secondAttribute="leading" id="NiC-8d-rfV"/>
+                            <constraint firstItem="3bb-4i-KMH" firstAttribute="trailing" secondItem="vWg-q0-gqJ" secondAttribute="trailing" id="PYu-6z-VQD"/>
+                            <constraint firstItem="vWg-q0-gqJ" firstAttribute="top" secondItem="3bb-4i-KMH" secondAttribute="top" id="YgA-cH-zqg"/>
+                            <constraint firstItem="7x8-l2-788" firstAttribute="centerX" secondItem="vWg-q0-gqJ" secondAttribute="centerX" id="bgZ-wR-zit"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="vWg-q0-gqJ" id="xnu-LY-BXE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OEG-db-Y1A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="763" y="-65"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="compass" width="50" height="50"/>
+        <image name="map" width="50" height="50"/>
+        <image name="pokeball" width="50" height="50"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
